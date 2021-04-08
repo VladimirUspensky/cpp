@@ -1,0 +1,17 @@
+name: test_cpp_build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: env
+        run: |
+          echo HI! >> hi.txt
+          ls
+          cl
